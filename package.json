@@ -1,22 +1,24 @@
 {
   "name": "hackerrank-submission-scrap",
   "version": "0.0.1",
-  "description": "",
-  "main": "index.js",
+  "description": "ALPRO Hackerrank Submission data Processing",
+  "main": "transform.js",
   "scripts": {
-    "start": "node ./index.js"
+    "start": "node ./transform.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ghufr/hackerrank-submission-scrap.git"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/ghufr/hackerrank-submission-scrap/issues"
   },
   "homepage": "https://github.com/ghufr/hackerrank-submission-scrap#readme",
   "dependencies": {
+    "dotenv": "^8.2.0",
+    "neat-csv": "^5.2.0",
     "selenium-webdriver": "^4.0.0-alpha.7"
   },
   "devDependencies": {
