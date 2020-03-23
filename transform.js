@@ -37,10 +37,17 @@ const challenges = {
         });
       }
     });
-    const users = await neatCsv(await fs.readFile("./data/users.csv", "utf8"));
+    const users = (
+      await neatCsv(await fs.readFile("./data/users.csv", "utf8"))
+    ).map(user => ({
+      ...user,
+      hacker_username: user.hacker_username.toLowerCase()
+    }));
     results.map((result_curr, result_index) => {
       const { hacker_username } = result_curr;
-      const user_index = _findIndex(users, { hacker_username });
+      const user_index = _findIndex(users, {
+        hacker_username: hacker_username.toLowerCase()
+      });
       if (user_index > -1) {
         const { kode_asisten, kelas, nama_lengkap } = users[user_index];
         results.splice(result_index, 1, {
